@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Policies>
+<Policy name="MinimumPasswordAge" default="0">
+<Guidance></Guidance>
+<Advice>
+<Threshold threshold="0-0">
+Your minimum password age is 0. This allows users to cycle through passwords to return to a previous password so they can continue using an old insecure password. Consider changing this value to 1 so users must create new passwords.
+</Threshold>
+<Threshold threshold="1-5">
+Your minimum password age is %NUM% days. This prevents users from changing their password very often. Consider shortening this time (But keeping it above 0) for added security
+</Threshold>
+<Threshold threshold="6-999">
+Your minimum password age is %NUM% days. This will allow users to change passwords frequently without cycling to reuse old passwords often enough to be insecure.
+</Threshold>
+</Advice>
+</Policy>
+
+<Policy name="MinimumPasswordAge" default="0">
+<Guidance></Guidance>
+<Advice>
+<Threshold threshold="0-20">
+Your maximum password age is %NUM% days. This means your users will have to change their password too frequetly and will encourage them to use insecure easy to guess passwords and/or store them in easy to access areas. Consider increasing this value.
+</Threshold>
+<Threshold threshold="150-999">
+Your maximum password age is %NUM% days. This allows your users to keep passwords for a very long time, increasing the chances it will be compromised and used before being changed. Consider decreasing this value.
+</Threshold>
+<Threshold threshold="21-149">
+Your maximum password age is %NUM% days. This should make your users change their password frequently enough without frustrating them and encouraging them to be insecure.
+</Threshold>
+</Advice>
+</Policy>
+
+<Policy name="MinimumPasswordAge" default="0">
+<Guidance></Guidance>
+<Advice>
+<Threshold threshold="0-20">
+Your maximum password age is %NUM% days. This means your users will have to change their password too frequetly and will encourage them to use insecure easy to guess passwords and/or store them in easy to access areas. Consider increasing this value.
+</Threshold>
+<Threshold threshold="150-999">
+Your maximum password age is %NUM% days. This allows your users to keep passwords for a very long time, increasing the chances it will be compromised and used before being changed. Consider decreasing this value.
+</Threshold>
+<Threshold threshold="21-149">
+Your maximum password age is %NUM% days. This should make your users change their password frequently enough without frustrating them and encouraging them to be insecure.
+</Threshold>
+</Advice>
+</Policy>
+
+<Policy name="LockoutDuration" default="0">
+<Guidance></Guidance>
+<Advice>
+<Threshold threshold="0-0">
+There is no lockout policy, so also no lockout duration.
+</Threshold>
+<Threshold threshold="1-60">
+Your lockout duration is %NUM% minutes. While this gives multiple attempts to an attacker for instance overnight, with few enough attemps given per lockout this is not a problem.
+</Threshold>
+<Threshold threshold="61-999">
+Your lockout duration is %NUM% minutes. This will keep attackers from making too many attempts in any given time, however if an administrator is not easy to access this could leave users locked out of their accounts for a very long time.
+</Threshold>
+</Advice>
+</Policy>
+
+<Policy name="LockoutBadCount" default="0">
+<Guidance></Guidance>
+<Advice>
+<Threshold threshold="0-0">
+There is currently no lockout policy. This means attackers can make essentially unlimited attempts to log in, giving them a good chance to find at least one valid password. Consider enabling lockout to prevent this.
+</Threshold>
+<Threshold threshold="1-3">
+You allow %NUM% attempts at getting the correct password. Typos are not uncommon and you will see a large number of users being locked out, which in addition to lowering productivity will encourage users to use easier passwords. Assuming the password policy is secure you can allow more attempts without compromising security.
+</Threshold>
+<Threshold threshold="15-999">
+You allow %NUM% attempts at getting the correct password. This is a lot of attempts, and far more than any user should need. Attackers will benefit by being able to try quite a large number of common passwords, especially if you don't have a strong password policy. Consider reducing the number of allowed attemps
+</Threshold>
+<Threshold threshold="4-14">
+You allow %NUM% attempts at getting the correct password. This should give plenty of attempts for the user without giving any serious security concerns. However make sure your password policy is strong, so that attackers can't easily guess some passwords in this few attempts.
+</Threshold>
+</Advice>
+</Policy>
+
+<Policy name="ResetLockoutCount" default="0">
+<Guidance></Guidance>
+<Advice>
+<Threshold threshold="0-0">
+There is no lockout policy, so also no reset interval.
+</Threshold>
+<Threshold threshold="1-60">
+Your lockout counter reset time is %NUM% minutes. This setting is only an issue if many attempts are given per lockout, or this is far longer than the lockout setting. While this value should not be visible or known to an attacker, if figured out that could be used to circumvent a longer lockout time. Make sure this value is not too different from the lockout duration.
+</Threshold>
+<Threshold threshold="61-999">
+Your lockout counter reset time is %NUM% minutes. This This in particular is not an issue, however it means your lockout duration is potentially long enough to keep a user locked out for too long. In addition, make sure this value is not too different from the lockout duration, otherwise it can be used to circumvent the lockout time if figured out.
+</Threshold>
+</Advice>
+</Policy>
+
+</Policies>
